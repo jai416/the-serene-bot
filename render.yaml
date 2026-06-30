@@ -7,18 +7,30 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python bot-telegram/bot.py
     envVars:
-      - key: TELEGRAM_TOKEN; sync: false
-      - key: TELEGRAM_GROUP_ID; sync: false
-      - key: ADMIN_TELEGRAM_IDS; sync: false
-      - key: VALIDATOR_TELEGRAM_IDS; sync: false
-      - key: DATABASE_URL; sync: false
-      - key: SITE_URL; value: https://the-serene-lens-nuevo.onrender.com
-      - key: LOG_LEVEL; value: INFO
-      - key: TRANSFER_ACCOUNT; value: "9238000000000000"
-      - key: TRANSFER_HOLDER; value: Nombre del Titular
-      - key: PAYPAL_TIMEOUT_MINUTES; value: "5"
-      - key: TRANSFER_PENDING_TIMEOUT_HOURS; value: "2"
-      - key: TRANSFER_VALIDATED_TIMEOUT_MINUTES; value: "30"
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_GROUP_ID
+        sync: false
+      - key: ADMIN_TELEGRAM_IDS
+        sync: false
+      - key: VALIDATOR_TELEGRAM_IDS
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: SITE_URL
+        value: https://the-serene-lens-nuevo.onrender.com
+      - key: LOG_LEVEL
+        value: INFO
+      - key: TRANSFER_ACCOUNT
+        value: "9238000000000000"
+      - key: TRANSFER_HOLDER
+        value: Nombre del Titular
+      - key: PAYPAL_TIMEOUT_MINUTES
+        value: "5"
+      - key: TRANSFER_PENDING_TIMEOUT_HOURS
+        value: "2"
+      - key: TRANSFER_VALIDATED_TIMEOUT_MINUTES
+        value: "30"
 
   - type: cron
     name: monitor-pagos
@@ -28,10 +40,14 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python scripts/monitor_pagos.py
     envVars:
-      - key: DATABASE_URL; sync: false
-      - key: TELEGRAM_TOKEN; sync: false
-      - key: TELEGRAM_GROUP_ID; sync: false
-      - key: LOG_LEVEL; value: INFO
+      - key: DATABASE_URL
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_GROUP_ID
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO
 
   - type: cron
     name: monitor-transfer
@@ -41,10 +57,14 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python scripts/monitor_transfer.py
     envVars:
-      - key: DATABASE_URL; sync: false
-      - key: TELEGRAM_TOKEN; sync: false
-      - key: TELEGRAM_GROUP_ID; sync: false
-      - key: LOG_LEVEL; value: INFO
+      - key: DATABASE_URL
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_GROUP_ID
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO
 
   - type: cron
     name: check-apis
@@ -54,9 +74,12 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python scripts/check_apis.py
     envVars:
-      - key: TELEGRAM_TOKEN; sync: false
-      - key: TELEGRAM_GROUP_ID; sync: false
-      - key: LOG_LEVEL; value: INFO
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_GROUP_ID
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO
 
   - type: cron
     name: reporte-diario
@@ -66,10 +89,14 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python scripts/send_daily_report.py
     envVars:
-      - key: DATABASE_URL; sync: false
-      - key: TELEGRAM_TOKEN; sync: false
-      - key: TELEGRAM_GROUP_ID; sync: false
-      - key: LOG_LEVEL; value: INFO
+      - key: DATABASE_URL
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_GROUP_ID
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO
 
   - type: cron
     name: reporte-semanal
@@ -79,10 +106,14 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python scripts/send_weekly_report.py
     envVars:
-      - key: DATABASE_URL; sync: false
-      - key: TELEGRAM_TOKEN; sync: false
-      - key: TELEGRAM_GROUP_ID; sync: false
-      - key: LOG_LEVEL; value: INFO
+      - key: DATABASE_URL
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_GROUP_ID
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO
 
   - type: cron
     name: reporte-mensual
@@ -92,7 +123,11 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: python scripts/send_monthly_report.py
     envVars:
-      - key: DATABASE_URL; sync: false
-      - key: TELEGRAM_TOKEN; sync: false
-      - key: TELEGRAM_GROUP_ID; sync: false
-      - key: LOG_LEVEL; value: INFO
+      - key: DATABASE_URL
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: TELEGRAM_GROUP_ID
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO
